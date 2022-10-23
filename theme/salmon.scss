@@ -1,0 +1,68 @@
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "reveal.js/css/theme/template/mixins";
+@import "reveal.js/css/theme/template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+@import url(./fonts/work-sans/work-sans.css);
+@import url(./fonts/noto-sans/noto-sans.css);
+@import url(./fonts/cabin/cabin.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #E7F2F8;
+
+$mainColor: #74BDCB;
+$headingColor: darken($mainColor, 20%);
+$subheadingColor: darken($headingColor, 15%);
+$linkColor: #FFA384;
+$faddedColor: #EFE7BC;
+
+$mainFontSize: 42px;
+$mainFont: 'WorkSans', Helvetica, sans-serif;
+$headingFont: 'WorkSans', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+$footerSize: 0.4em;
+
+// Change text colors against dark slide backgrounds
+@include dark-bg-text-color(#fff);
+
+
+// Theme template ------------------------------
+@import "reveal.js/css/theme/template/theme";
+// ---------------------------------------------
+
+.reveal .presentation-footer {
+  font-size: $footerSize;
+  color: $linkColor;
+  font-style: italic;
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+
+.reveal .subheading {
+  color: $subheadingColor;
+  font-family: 'NotoSans';
+}
